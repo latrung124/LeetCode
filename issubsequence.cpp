@@ -15,9 +15,29 @@ using namespace std;
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
-
+        size_t sizeS = s.size();
+        size_t sizeT = t.size();
+        if (sizeS == 0 && sizeT != 0) return true;
+        else if (sizeS != 0 && sizeT == 0) return false;
+        else if (sizeS == 0 && sizeT == 0) return true;
+        int dem = sizeT-1;
+        while (sizeS--) {
+            if (dem < 0) break;
+            bool isSame = false;
+            for (int i = dem ; i >= 0; --i) {
+                if (s[sizeS] == t[i]) {
+                    dem = --i;
+                    isSame = true;
+                    break;
+                }
+            }
+            if (!isSame) return false;
+        }
+        return true;
     }
 };
 int main() {
+    Solution s;
+    cout << s.isSubsequence("axc", "ahbgdc") << endl;
     return 0;
 }
