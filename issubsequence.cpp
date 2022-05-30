@@ -36,8 +36,8 @@ public:
         return true;
     }
 };
-int main() {
-    Solution s;
-    cout << s.isSubsequence("axc", "ahbgdc") << endl;
-    return 0;
-}
+//int main() {
+//    Solution s;
+//    cout << s.isSubsequence("axc", "ahbgdc") << endl;
+//    return 0;
+//}
