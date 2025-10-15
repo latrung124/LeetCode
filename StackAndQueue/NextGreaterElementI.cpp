@@ -15,16 +15,11 @@ public:
             stack.push(num);
         }
 
-        while (!stack.empty()) {
-            map[stack.top()] = -1;
-            stack.pop();
-        }
-
         std::vector<int> result;
         result.reserve(nums1.size());
         for (const int num : nums1) {
-            if (map.find(num) != map.end()) {
-                result.push_back(map[num]);
+            if (int nextGreater = map[num]; nextGreater) {
+                result.push_back(nextGreater);
             } else {
                 result.push_back(-1);
             }
